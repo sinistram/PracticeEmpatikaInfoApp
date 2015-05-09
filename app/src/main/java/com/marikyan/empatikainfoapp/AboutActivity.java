@@ -153,7 +153,7 @@ public class AboutActivity extends FragmentActivity {
         i.setType("text/plain");
         i.putExtra(Intent.EXTRA_EMAIL  , new String[]{email});
         try {
-            startActivity(i);
+            startActivity(Intent.createChooser(i, "Send mail..."));
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(AboutActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
         }
