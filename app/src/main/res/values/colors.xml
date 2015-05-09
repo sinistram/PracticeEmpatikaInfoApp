@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="actionbar_background">#257567</color>
+    <color name="actionbar_text">#fff</color>
+   <!-- <color name="statusbar_text">#257567></color> -->
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:right="50dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="40px" />
+            <solid android:color="#257567"/>
+        </shape>
+    </item>
+    <item android:left="50dp">
+        <shape android:shape="rectangle">
+            <corners android:topRightRadius="40dp" android:bottomRightRadius="40dp"/>
+            <solid android:color="#11594C"/>
+        </shape>
+    </item>
+    <item android:right="210dp" android:left="10dp">
+        <bitmap android:src="@drawable/ic_action_call" />
+    </item>
+
+</layer-list>

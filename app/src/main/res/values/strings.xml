@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">EmpatikaInfoApp</string>
+
+    <string name="button_go">Go!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_about">About Company</string>
+    <string name="company_name">Empatika</string>
+    <string name="call_us">CALL US</string>
+    <string name="write_us">WRITE US</string>
+    <string name="company_info">We are proud of our food: we choose only fresh products, cook it with love and try to deliver it to you faster
+   \n\nWe hope, that you\'ll like it and become our friend.
+            \n\nWe are available 7 days a week, from 12:00 to 22:30
+    </string>
+    <string name="copyright">\u00A9 2015 Empatika</string>
+</resources>

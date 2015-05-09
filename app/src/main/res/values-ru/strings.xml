@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ЕмпатикаИнфо</string>
+    <string name="button_go">Вперед</string>
+    <string name="title_activity_about">О компании</string>
+    <string name="action_settings">Настройки</string>
+    <string name="company_name">Empatika</string>
+    <string name="call_us">ЗВОНИТЕ НАМ</string>
+    <string name="write_us">ПИШИТЕ НАМ</string>
+    <string name="company_info">Мы в компании гордимся нашей едой: отбираем только свежие продукты, с любовью готовим эду и стараемся доставить ее быстро
+        \n\nНадеемсся, вы оцените качество и станете нашими друзьями.
+        \n\nМы работаем без выходных, с 12:00 до 22:30</string>
+</resources>
