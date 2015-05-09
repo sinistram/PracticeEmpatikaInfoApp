@@ -150,7 +150,7 @@ public class AboutActivity extends FragmentActivity {
 
     public void buttonSendClick(View v) {
         Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("text/plain");
+        i.setType("message/rfc822");
         i.putExtra(Intent.EXTRA_EMAIL  , new String[]{email});
         try {
             startActivity(Intent.createChooser(i, "Send mail..."));
