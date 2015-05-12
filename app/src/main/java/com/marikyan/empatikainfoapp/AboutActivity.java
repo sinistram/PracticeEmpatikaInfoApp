@@ -59,20 +59,9 @@ public class AboutActivity extends FragmentActivity {
         data = getApplicationContext().getSharedPreferences("data", MODE_PRIVATE);
         editor = data.edit();
 
-        String jsonString = data.getString("jsonData", "");
-        if (jsonString.length() > 0) { //data is already loaded
-            try {
-                infoJSON = new JSONObject(jsonString);
-                applyData();
-                return;
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://m.empatika-resto-test.appspot.com/api/company/get_company?company_id=5629499534213120";
+        String url = "http://empatika-resto.appspot.com/api/company/get_company?company_id=5764144745676800";
+     //   String url ="http://m.empatika-resto-test.appspot.com/api/company/get_company?company_id=5629499534213120";
 // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -80,9 +69,10 @@ public class AboutActivity extends FragmentActivity {
                     public void onResponse(String response) {
                         try {
                             infoJSON = new JSONObject(response);
+                            applyData();
+                            editor.clear();
                             editor.putString("jsonData", response);
                             editor.apply();
-                            applyData();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -91,11 +81,22 @@ public class AboutActivity extends FragmentActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                mTextView.setText("Oups!");
+                error.printStackTrace();
             }
         });
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
+
+
+        String jsonString = data.getString("jsonData", "");
+        if (jsonString.length() > 0) { //data is already loaded
+            try {
+                infoJSON = new JSONObject(jsonString);
+                applyData();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -103,7 +104,7 @@ public class AboutActivity extends FragmentActivity {
 
     private void applyData() {
         try {
-            email = infoJSON.get("email").toString();
+            email = infoJSON.getJSONArray("support_emails").get(0).toString();
             phone = infoJSON.get("phone").toString();
         } catch (JSONException e) {
             e.printStackTrace();
